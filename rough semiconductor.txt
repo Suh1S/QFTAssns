@@ -1,0 +1,358 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{UP204 Lab Report: Semiconductor Diodes}
+\author{Suhas Sheikh (16604-C)}
+\date{March 2021}
+\usepackage{graphicx}
+\usepackage{float}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Objectives of the Experiment}
+\begin{enumerate}
+    \item[1.] \textbf{Obtaining I-V characteristic curves for a few semiconductor devices like the 1N4007 Si diode, 1N4148 Si diode, Blue L.E.D, Green L.E.D, Red L.E.D, Yellow L.E.D, BC junction in a BJT(Bipolar Junction Transistor) and the BE junction in a BJT (This is done under the assumption that $R_{r} = 0$).}
+    
+    \item[2.] \textbf{Fitting the I-V characteristic curves for all the semiconductor devices, to the ideal Shockley diode equation i.e $I = I_{s} \cdot (e^{\frac{qV}{\eta k T}} - 1)$ and obtaining $I_{s}$ (saturation current), $\eta$ (ideality factor) and the knee/turn-on voltage for each semiconductor device. }
+    
+    \item[3.] \textbf{Understanding the band diagrams of p-n junctions, L.E.Ds and BJTs: Important parameters like $E_{conduction}$, $E_{valence}$ and $E_{gap}$. }
+    
+    \item[4.]\textbf{Understanding different types of recombination (direct and indirect) in L.E.Ds, drift and diffusion currents in p-n junctions and the different configurations in BJTs.}
+    
+    \item[5.]\textbf{Deriving the law of mass action in the high temperature limit, for semiconductor devices and also empirically 'deriving' /motivating the Shockley diode equation (its form).}
+    
+    \item[6.] \textbf{Quantifying deviations from ideality by calculating $R_{r}$ for all the semiconductor devices and giving reasons for why and where $R_{r} = 0$ is a reasonable assumption.}
+    
+    \item[7.] \textbf{Comparing the knee voltages of different L.E.Ds and understanding their properties (trends in band-gap).}
+    
+    \item[8.] \textbf{Comparing the knee voltages of the BC and BE junctions of the BJT and understanding the differences between the 2 configurations.}
+    
+    \item[9.] \textbf{Comparing various $I_{CE}$ - $V_{CE}$ characteristic curves for different values of base current, $I_{B}$, on the same plot to understand the differences in the values of saturation current, $I_{saturation}$.}
+    
+\end{enumerate}
+
+
+\section{Answers to Pre-Lab questions}
+
+\textbf{The answers to the pre-lab questions have been attached below, as notebook page images.}
+
+
+%attach images to q1 here
+
+
+%attach images to q2 here
+
+\section{Analysis}
+
+We perform data analysis by performing fits of the Ideal Shockley Diode equation on all the I-V characteristic scatter plots i.e. all I-V scatter plots of the semiconductor devices are fit with the ideal Shockley diode equation  $I = I_{s} \cdot (e^{\frac{qV}{\eta k T}} - 1)$, in the form of:
+
+\vspace{1mm}
+
+$I = m \cdot (e^{\frac{eV}{n k T}} - 1)$, where $m$ is $I_{s}$, $n$ is $\eta$, $q$ is $e$ and $\frac{kT}{e} \approx 25.86$ mV$^{-1}$ (at $300$ K). In a few cases, where offset by a constant is required, we use the equation:
+
+\vspace{1mm}
+
+$I = m \cdot (e^{\frac{V}{n \cdot 25.86}} - 1)  + k$, where $k$ is the offset constant.
+
+\vspace{1mm}
+
+We use this form of the Shockley diode equation and perform fits on all the I-V scatter plots. The errors obtained in the parameters are the intrinsic fit errors and not the measurement errors (as we can safely neglect measurement errors while performing the experiment; this makes error bars redundant). \textbf{This fitting is done under the assumption that $R_{r} = 0$.}
+
+\vspace{2mm}
+
+
+To find out $R_{r}$, we use a modified form of Shockley's diode equation i.e. 
+
+\vspace{1mm}
+
+$I = I_{s} \cdot (e^{\frac{q(V - I \cdot R_{r})}{\eta k T}} - 1)$
+
+\vspace{1mm}
+
+Now, we find $R_{r}$ (approximately) in the linear regime (where I-V have a linear relationship. \textbf{This happens at larger values of V}). Performing a first order Taylor expansion and making necessary approximations, we get:
+
+\vspace{1mm}
+
+$e^{\frac{q(V - I \cdot R_{r})}{\eta k T}} \approx 1 + \frac{q(V - I \cdot R_{r})}{\eta k T}$ (till first order)
+
+\vspace{1mm}
+
+Now setting $q$ as $e$ and simplifying, we get:
+
+\vspace{1mm}
+
+$I = I_{s} \cdot e \cdot \frac{(V - I\cdot R_{r})}{\eta k T}$ which gives us:
+
+\vspace{1mm}
+
+$I = \frac{\frac{e}{\eta k T}}{\frac{1}{I_{s}} + \frac{e\cdot R_{r}}{\eta k T}} \cdot V$, a linear relationship between $I$ and $V$.
+
+\vspace{1mm}
+
+Now, under the assumption (which is supported by order of magnitude of the values) that $\frac{1}{I_{s}} <<< \frac{e\cdot R_{r}}{\eta k T}$, we get:
+
+\vspace{1mm}
+
+$I \approx \frac{\frac{e}{\eta k T}}{\frac{e\cdot R_{r}}{\eta k T}} \cdot V = \frac{V}{R_{r}}$
+
+\vspace{1mm}
+
+Hence, the \textbf{reciprocal} of the slope ($\frac{\Delta I}{\Delta V}$) in the linear regime of the I-V characteristic curve for the semiconductor devices, yields the resistance, $R_{r}$. (as $R_{r} = \frac{\Delta V}{\Delta I} = \frac{1}{\frac{\Delta I}{\Delta V}}$)
+
+\vspace{3mm}
+
+Knee voltage/turn-on voltage is calculated via eyeballing, from the I-V characteristic curve i.e. it is the voltage value at which $I \approx 5$ mA.
+
+\vspace{3mm}
+
+We now, begin fitting the I-V curves for all the semiconductor devices. 
+
+
+\subsection{1N4007 Si diode}
+
+The I-V characteristic for the 1N4007 Si diode has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{1N4007 I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the 1N4007 Si diode}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r 1n4007-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the 1N4007 Si diode}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+\subsection{1N4148 Si diode}
+
+The I-V characteristic for the 1N4148 Si diode has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{1N4148 I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the 1N4148 Si diode}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r 1n4148-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the 1N4148 Si diode}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+\subsection{BE junction in BJT(Bipolar Junction Transistor)}
+
+The I-V characteristic for the BE junction in the BJT, has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{BJT BE I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the BE junction in the BJT}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r BE bjt-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the BE junction in the BJT}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+\subsection{BC junction in BJT(Bipolar Junction Transistor)}
+
+The I-V characteristic for the BC junction in the BJT, has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{BJT BC I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the BC junction in the BJT}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r BC bjt-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the BC junction in the BJT}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+\subsection{Blue L.E.D(Light Emitting Diode)}
+
+The I-V characteristic for the Blue L.E.D has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{blue led I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the Blue L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r blue led-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the Blue L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+\subsection{Green L.E.D(Light Emitting Diode)}
+
+The I-V characteristic for the Green L.E.D has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{green led I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the Green L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r green led-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the Green L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+\subsection{Red L.E.D(Light Emitting Diode)}
+
+The I-V characteristic for the Red L.E.D has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{red led I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the Red L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r red led-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the Red L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+\subsection{Yellow L.E.D(Light Emitting Diode)}
+
+The I-V characteristic for the Yellow L.E.D has been attached below
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{yellow led I-V-page-001.jpg}
+\caption{\textbf{I-V characteristic curve of the Yellow L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+The I-V linear regime plot (linear fit in the same) has also been attached (reciprocal of the slope gives $R_{r}$)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{R_r yellow led-page-001.jpg}
+\caption{\textbf{$R_{r}$ determination of the Yellow L.E.D}}
+\label{fig:Variation curve}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item[1.] Reverse saturation current, $I_{s} = $
+    \item[2.] Ideality Factor, $\eta = $
+    \item[3.] Knee Voltage, $V_{D} \approx $
+    \item[4.] $R_{r} = $
+\end{enumerate}
+
+
+
+
+\end{document}

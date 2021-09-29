@@ -1,0 +1,8 @@
+Rules of the quiz:
+1. Quiz will have 4 rounds: Very Easy, Easy, Medium and Hard with 5 questions each.
+2. There will be 3 "transition questions" i.e. questions b/w Very Easy and Easy, Easy and Medium, Medium and Hard for which I'll require artist name, song name and anime to award points. No partial points for these.
+3. There will be another bonus round after the Hard round ends, and will have 3 questions.
+4. Point distribution is: Very Easy-> 1 point, Easy-> 2 points, Medium-> 3 points, Hard-> 4 points
+5. Transition questions have 2 points, regardless of difficulty
+6. The bonus round questions are 3 points each.
+7. First (fastest :P) 2 to answer, get points

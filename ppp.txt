@@ -1,0 +1,32 @@
+class BatchGradientDescent():
+    def __init__(self, learning_rate):
+        self.learning_rate = learning_rate #choose appropriate learning rate
+        self.w = 0 #initialize w values
+        self.b = 0 #initialize b values
+          
+    def fit(self, X, y, iters = 100):
+        N = len(X)
+        history = []
+        
+        for i in range(iters):
+            f = y - (self.w * X + self.b)
+    
+            self.w -= self.learning_rate * (-2 * X.dot(f.T).sum() / N)
+            self.b -= self.learning_rate * (-2 * f.sum() / N)
+        
+            loss = mean_squared_error(y, (self.w * X + self.b))
+                                      
+            if i % 100 == 0:
+                print(f"iters: {i}, Loss: {loss})")
+            
+            history.append(loss)
+                                      
+        return history
+                
+    def predict(self, X):
+        return self.w * X + self.b
+
+model = BatchGradientDescent(learning_rate = 0.01)
+history = model.fit(X_train, y_train, 1000)
+
+predictions = model.predict(X_test)

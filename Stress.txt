@@ -1,0 +1,7 @@
+Traction forces form a matrix T = AB
+where A = \sigma_11 \sigma_12 \sigma_13   e_1
+          \sigma_21 \sigma_22 \sigma_23   e_2
+          \sigma_31 \sigma_32 \sigma_33   e_3
+A-> Stress matrix/tensor
+\sigma_ii are the normal stresses
+\sigma_ij (i \neq j) are the shear stresses
